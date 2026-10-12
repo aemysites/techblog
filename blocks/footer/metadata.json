@@ -1,0 +1,29 @@
+{
+  "variantName": "footer",
+  "baseBlock": "footer",
+  "canonicalModel": "configuration",
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "complexity": "simple",
+    "density": "moderate"
+  },
+  "contentPattern": {
+    "description": "Global footer loaded as a fragment from the path in the 'footer' page metadata (default /footer). Source shows one line of text links separated by ' / ' (Privacy Policy, Proudly powered by WordPress) under a thin top rule. The fragment's sections are moved into the footer block unchanged.",
+    "source": "fragment",
+    "fragmentPath": "/footer"
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://blog.osoco.de/",
+        "instanceId": "footer-global",
+        "screenshot": ".pages/_global/footer.jpg"
+      }
+    ],
+    "reuseCount": 1
+  },
+  "options": [],
+  "memberVariantIds": [
+    "footer-global"
+  ]
+}

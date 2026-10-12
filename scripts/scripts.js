@@ -10,7 +10,9 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  getMetadata,
 } from './aem.js';
+import { SIDEBAR_PATH, hasSidebar } from './sidebar.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -74,6 +76,16 @@ function buildWidgetAutoBlocks(main) {
 }
 
 /**
+ * Adds the post meta line ("posted in … on …") to the end of a blog post.
+ * @param {Element} main The container element
+ */
+function buildPostMetaBlock(main) {
+  if (!getMetadata('publication-date') || main.querySelector('.post-meta')) return;
+  const section = main.querySelector(':scope > div');
+  if (section) section.append(buildBlock('post-meta', ''));
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -97,10 +109,28 @@ function buildAutoBlocks(main) {
       });
     }
     buildWidgetAutoBlocks(main);
+    if (main === document.querySelector('main')) buildPostMetaBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
   }
+}
+
+/**
+ * Loads the shared sidebar fragment into an <aside> at the end of main.
+ * @param {Element} main The main element
+ */
+async function loadSidebar(main) {
+  if (!main || !hasSidebar()) return;
+  // eslint-disable-next-line import/no-cycle
+  const { loadFragment } = await import('../blocks/fragment/fragment.js');
+  const fragment = await loadFragment(SIDEBAR_PATH);
+  if (!fragment) return;
+  const aside = document.createElement('aside');
+  aside.className = 'sidebar';
+  aside.append(...fragment.childNodes);
+  main.append(aside);
+  main.classList.add('has-sidebar');
 }
 
 /**
@@ -188,6 +218,7 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+  await loadSidebar(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

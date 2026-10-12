@@ -1,0 +1,23 @@
+/* "This entry was posted in …" line that closes a post (Twenty Twelve .entry-meta) */
+.post-meta {
+  margin: 24px 0 0;
+  padding-bottom: 24px;
+  border-bottom: 4px double #ededed;
+  font-size: 13px;
+  line-height: 24px;
+  color: #757575;
+}
+
+.post-meta p {
+  margin: 0;
+}
+
+.post-meta a:any-link {
+  color: #757575;
+  text-decoration: underline;
+}
+
+.post-meta a:hover,
+.post-meta a:focus {
+  color: #21759b;
+}

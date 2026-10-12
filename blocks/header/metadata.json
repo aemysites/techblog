@@ -1,0 +1,30 @@
+{
+  "variantName": "header",
+  "baseBlock": "header",
+  "canonicalModel": "configuration",
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "complexity": "simple",
+    "density": "moderate"
+  },
+  "contentPattern": {
+    "description": "Global header loaded as a fragment from the path in the 'nav' page metadata (default /nav). Its sections map to nav-brand, nav-sections and nav-tools. The source has one horizontal row of uppercase text links (Home, Blog, Privacy Policy) with the current page in bold, set between thin top and bottom rules. Below 900px the links collapse behind a hamburger toggle.",
+    "source": "fragment",
+    "fragmentPath": "/nav",
+    "sections": ["brand", "sections", "tools"]
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://blog.osoco.de/",
+        "instanceId": "header-global",
+        "screenshot": ".pages/_global/header.jpg"
+      }
+    ],
+    "reuseCount": 1
+  },
+  "options": [],
+  "memberVariantIds": [
+    "header-global"
+  ]
+}
