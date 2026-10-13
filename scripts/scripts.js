@@ -194,6 +194,8 @@ async function loadEager(doc) {
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
+    // reserve the sidebar column before first paint so content doesn't reflow when it loads
+    if (hasSidebar()) main.classList.add('has-sidebar');
     decorateMain(main);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
