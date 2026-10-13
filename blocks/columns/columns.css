@@ -11,17 +11,26 @@
   order: 1;
 }
 
+.columns > div > div > p:last-child {
+  margin-bottom: 0;
+}
+
 .columns > div > .columns-img-col {
   order: 0;
+  margin-bottom: 24px;
 }
 
+/* narrow screens: image keeps its natural 300px width, right-aligned above the text */
 .columns > div > .columns-img-col img {
   display: block;
+  max-width: 300px;
+  margin-left: auto;
 }
 
-@media (width >= 900px) {
+/* wide screens: text left, image right at its natural size (Twenty Twelve .alignright) */
+@media (width >= 600px) {
   .columns > div {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: unset;
     gap: 24px;
   }
@@ -29,5 +38,15 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns > div > .columns-img-col {
+    flex: 0 1 auto;
+    margin-bottom: 0;
+  }
+
+  .columns > div > .columns-img-col img {
+    width: auto;
+    max-width: 300px;
   }
 }

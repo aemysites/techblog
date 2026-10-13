@@ -1,0 +1,44 @@
+{
+  "variantName": "columns",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + image"
+  },
+  "contentPattern": {
+    "description": "One row with two columns: a text column (optional heading, one or more paragraphs) and an image column holding a single picture. Columns sit side by side from 900px and stack below; an image-only cell is marked columns-img-col and shown first on mobile. Homepage welcome: intro text left, photo right.",
+    "rows": 1,
+    "columns": 2,
+    "cells": [
+      {
+        "name": "text",
+        "content": "heading (optional) + paragraphs"
+      },
+      {
+        "name": "image",
+        "content": "picture"
+      }
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://blog.osoco.de/",
+        "instanceId": "2203c5c",
+        "screenshot": ".pages/blog_osoco_de--63a9768a/blocks/2203c5c.jpg",
+        "documentPath": "/index"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-12T14:00:38Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_9dc326ad5e8e"
+  ]
+}

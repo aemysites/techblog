@@ -1,0 +1,75 @@
+.post-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list li {
+  margin: 0;
+}
+
+/* listing pages: one entry per post, separated like Twenty Twelve archive entries */
+.post-list article {
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 4px double #ededed;
+}
+
+.post-list article h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.post-list article h2 a:any-link {
+  color: #21759b;
+  text-decoration: none;
+}
+
+.post-list article h2 a:hover,
+.post-list article h2 a:focus {
+  color: #0f3647;
+}
+
+.post-list .post-list-date {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #757575;
+}
+
+.post-list .post-list-description {
+  margin: 0;
+}
+
+.post-list .post-list-empty {
+  font-style: italic;
+  color: #757575;
+}
+
+@media (width >= 600px) {
+  .post-list article h2 {
+    font-size: 22px;
+  }
+}
+
+/* sidebar "Recent Posts": plain link list (Twenty Twelve widget) */
+.post-list.compact {
+  margin-bottom: 48px;
+}
+
+.post-list.compact li {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.post-list.compact a:any-link {
+  color: #757575;
+  text-decoration: underline;
+}
+
+.post-list.compact a:hover,
+.post-list.compact a:focus {
+  color: #21759b;
+}

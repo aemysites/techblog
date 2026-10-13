@@ -1,0 +1,14 @@
+https://blog.osoco.de/blog/
+https://blog.osoco.de/category/everything/
+https://blog.osoco.de/category/software/
+https://blog.osoco.de/category/software/osgi/
+https://blog.osoco.de/category/uncategorized/
+https://blog.osoco.de/tag/aem/
+https://blog.osoco.de/tag/components/
+https://blog.osoco.de/tag/declarative-services/
+https://blog.osoco.de/tag/dependency-injection/
+https://blog.osoco.de/tag/developer/
+https://blog.osoco.de/tag/fun/
+https://blog.osoco.de/tag/osgi/
+https://blog.osoco.de/tag/services/
+https://blog.osoco.de/tag/value/

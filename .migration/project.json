@@ -1,0 +1,14 @@
+{
+  "type": "da",
+  "sites": {
+    "techblog": {
+      "previewOrg": "aemysites",
+      "previewSite": "techblog",
+      "contentHostUrl": "https://content.da.live/aemysites/techblog/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  },
+  "features": [
+    "site-planning"
+  ]
+}
