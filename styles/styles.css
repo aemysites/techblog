@@ -428,3 +428,15 @@ main .sidebar a:focus {
     margin-top: 0;
   }
 }
+
+/* listing pages (blog index, category, tag): archive label above the post list (Twenty Twelve .archive-header) */
+.post-listing main > .section:first-of-type h1 {
+  margin: 0 0 48px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule-color);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 2.1818;
+  color: var(--dark-color);
+  text-transform: uppercase;
+}

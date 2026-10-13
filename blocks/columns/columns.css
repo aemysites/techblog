@@ -20,8 +20,11 @@
   margin-bottom: 24px;
 }
 
+/* narrow screens: image keeps its natural 300px width, right-aligned above the text */
 .columns > div > .columns-img-col img {
   display: block;
+  max-width: 300px;
+  margin-left: auto;
 }
 
 /* wide screens: text left, image right at its natural size (Twenty Twelve .alignright) */

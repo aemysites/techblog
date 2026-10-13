@@ -42,7 +42,8 @@ export default async function decorate(block) {
   block.textContent = '';
   const date = getMetadata('publication-date');
   const categories = splitList(getMetadata('categories'));
-  const tags = splitList(getMetadata('tags'));
+  // Tags metadata is rendered as one <meta property="article:tag"> per tag
+  const tags = splitList(getMetadata('article:tag') || getMetadata('tags'));
   if (!date && !categories.length && !tags.length) {
     block.remove();
     return;

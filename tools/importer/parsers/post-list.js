@@ -8,7 +8,7 @@
  * an h1 plus a query-driven Post List block, filtered by the archive's category or tag.
  *
  * Source: #primary (#content with header.archive-header > h1.archive-title > span, then articles)
- * Output: <h1>{name}</h1> + Post List block (rows: Category | name, or Tag | name; none for /blog/)
+ * Output: <h1>{full archive title}</h1> + Post List block (rows: Category | name, or Tag | name; none for /blog/)
  */
 
 const SITE_SUFFIX_RE = /\s*[-–|]\s*A Matter of Unimportance\s*$/i;
@@ -28,8 +28,13 @@ export default function parse(element, { document }) {
   if (bodyClasses.contains('category')) cells.push(['Category', name]);
   else if (bodyClasses.contains('tag')) cells.push(['Tag', name]);
 
+  // The h1 mirrors the archive title exactly as rendered ("Category Archives: OSGi");
+  // the block row above keeps only the bare name from the span.
+  const titleEl = element.querySelector('header.archive-header h1.archive-title, .archive-title');
+  const titleText = titleEl ? titleEl.textContent.replace(/\s+/g, ' ').trim() : '';
+
   const heading = document.createElement('h1');
-  heading.textContent = name || 'Blog';
+  heading.textContent = titleText || name || 'Blog';
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'Post List', cells });
   element.replaceWith(heading, block);
